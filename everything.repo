@@ -1,0 +1,19 @@
+[jajauma-packages-everything]
+name=Jajauma's Packages - Everything
+baseurl=http://packages.jajauma.exnet.su/yum/everything-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
+
+[jajauma-packages-testing]
+name=Jajauma's Packages - Testing
+baseurl=http://packages.jajauma.exnet.su/yum/testing-el$releasever/$basearch/
+enabled=0
+gpgcheck=0
+
+[jajauma-packages-debuginfo]
+name=Jajauma's Packages - Debuginfo
+baseurl=http://packages.jajauma.exnet.su/yum/everything-el%releasever/$basearch/debug/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=0
+gpgcheck=1
