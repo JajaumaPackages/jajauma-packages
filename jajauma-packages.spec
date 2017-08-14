@@ -6,7 +6,8 @@ Summary:        JajaumaPackages Yum Configuration
 License:        MIT
 URL:            packages.jajauma.exnet.su
 Source0:        RPM-GPG-KEY-JajaumaPackages
-Source1:        everything.repo
+Source1:        jajauma-packages-everything.repo
+Source2:        jajauma-packages-wine.repo
 
 BuildArch:      noarch
 
@@ -18,6 +19,13 @@ BuildArch:      noarch
 Summary:        JajaumaPackages Yum Configuration (Everything)
 
 %description    everything
+%{summary}.
+
+
+%package        wine
+Summary:        JajaumaPackages Yum Configuration (Wine)
+
+%description    wine
 %{summary}.
 
 
@@ -33,11 +41,17 @@ install -d -m755 %{buildroot}/etc/pki/rpm-gpg/
 install -m644 %{SOURCE0} %{buildroot}/etc/pki/rpm-gpg/
 install -d -m755 %{buildroot}/etc/yum.repos.d/
 install -m644 %{SOURCE1} %{buildroot}/etc/yum.repos.d/jajauma-packages-everything.repo
+install -m644 %{SOURCE2} %{buildroot}/etc/yum.repos.d/jajauma-packages-wine.repo
 
 
 %files everything
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-everything.repo
+
+%files wine
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-wine.repo
+
 
 
 %changelog

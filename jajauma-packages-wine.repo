@@ -1,0 +1,6 @@
+[jajauma-packages-wine]
+name=Jajauma's Packages - Wine
+baseurl=http://packages.jajauma.exnet.su/yum/wine-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
