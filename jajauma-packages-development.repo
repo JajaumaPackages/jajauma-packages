@@ -1,0 +1,6 @@
+[jajauma-packages-development]
+name=Jajauma's Packages - Development
+baseurl=http://packages.jajauma.exnet.su/yum/development-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1

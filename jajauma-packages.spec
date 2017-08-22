@@ -9,6 +9,7 @@ Source0:        RPM-GPG-KEY-JajaumaPackages
 Source1:        jajauma-packages-everything.repo
 Source2:        jajauma-packages-wine.repo
 Source3:        jajauma-packages-server.repo
+Source4:        jajauma-packages-development.repo
 
 BuildArch:      noarch
 
@@ -22,18 +23,22 @@ Summary:        JajaumaPackages Yum Configuration (Everything)
 %description    everything
 %{summary}.
 
-
 %package        wine
 Summary:        JajaumaPackages Yum Configuration (Wine)
 
 %description    wine
 %{summary}.
 
-
 %package        server
 Summary:        JajaumaPackages Yum Configuration (Server)
 
 %description    server
+%{summary}.
+
+%package        development
+Summary:        JajaumaPackages Yum Configuration (Development)
+
+%description    development
 %{summary}.
 
 %prep
@@ -50,6 +55,7 @@ install -d -m755 %{buildroot}/etc/yum.repos.d/
 install -m644 %{SOURCE1} %{buildroot}/etc/yum.repos.d/jajauma-packages-everything.repo
 install -m644 %{SOURCE2} %{buildroot}/etc/yum.repos.d/jajauma-packages-wine.repo
 install -m644 %{SOURCE3} %{buildroot}/etc/yum.repos.d/jajauma-packages-server.repo
+install -m644 %{SOURCE4} %{buildroot}/etc/yum.repos.d/jajauma-packages-development.repo
 
 
 %files everything
@@ -63,6 +69,11 @@ install -m644 %{SOURCE3} %{buildroot}/etc/yum.repos.d/jajauma-packages-server.re
 %files server
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-server.repo
+
+%files development
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-development.repo
+
 
 
 %changelog
