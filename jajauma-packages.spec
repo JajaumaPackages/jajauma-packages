@@ -8,6 +8,7 @@ URL:            packages.jajauma.exnet.su
 Source0:        RPM-GPG-KEY-JajaumaPackages
 Source1:        jajauma-packages-everything.repo
 Source2:        jajauma-packages-wine.repo
+Source3:        jajauma-packages-server.repo
 
 BuildArch:      noarch
 
@@ -29,6 +30,12 @@ Summary:        JajaumaPackages Yum Configuration (Wine)
 %{summary}.
 
 
+%package        server
+Summary:        JajaumaPackages Yum Configuration (Server)
+
+%description    server
+%{summary}.
+
 %prep
 
 
@@ -42,6 +49,7 @@ install -m644 %{SOURCE0} %{buildroot}/etc/pki/rpm-gpg/
 install -d -m755 %{buildroot}/etc/yum.repos.d/
 install -m644 %{SOURCE1} %{buildroot}/etc/yum.repos.d/jajauma-packages-everything.repo
 install -m644 %{SOURCE2} %{buildroot}/etc/yum.repos.d/jajauma-packages-wine.repo
+install -m644 %{SOURCE3} %{buildroot}/etc/yum.repos.d/jajauma-packages-server.repo
 
 
 %files everything
@@ -52,8 +60,11 @@ install -m644 %{SOURCE2} %{buildroot}/etc/yum.repos.d/jajauma-packages-wine.repo
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-wine.repo
 
+%files server
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-server.repo
 
 
 %changelog
-* Thu Aug 10 2017 Jajauma's Packages <jajauma@yandex.ru> - 1.0.0-1
-- Initial releas
+* Tue Aug 22 2017 Jajauma's Packages <jajauma@yandex.ru> - 1.0.0-1
+- Initial release

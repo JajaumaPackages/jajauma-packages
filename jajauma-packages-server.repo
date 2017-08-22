@@ -1,0 +1,6 @@
+[jajauma-packages-server]
+name=Jajauma's Packages - Server
+baseurl=http://packages.jajauma.exnet.su/yum/server-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
