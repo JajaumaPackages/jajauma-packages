@@ -1,0 +1,6 @@
+[jajauma-packages-neovim]
+name=Jajauma's Packages - Neovim
+baseurl=http://packages.jajauma.exnet.su/yum/neovim-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
