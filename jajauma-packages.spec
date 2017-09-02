@@ -11,6 +11,7 @@ Source2:        jajauma-packages-wine.repo
 Source3:        jajauma-packages-server.repo
 Source4:        jajauma-packages-development.repo
 Source5:        jajauma-packages-neovim.repo
+Source6:        jajauma-packages-doublecmd.repo
 
 BuildArch:      noarch
 
@@ -48,6 +49,12 @@ Summary:        JajaumaPackages Yum Configuration (Neovim)
 %description    neovim
 %{summary}.
 
+%package        doublecmd
+Summary:        JajaumaPackages Yum Configuration (Double Commander)
+
+%description    doublecmd
+%{summary}.
+
 %prep
 
 
@@ -64,6 +71,7 @@ install -m644 %{SOURCE2} %{buildroot}/etc/yum.repos.d/jajauma-packages-wine.repo
 install -m644 %{SOURCE3} %{buildroot}/etc/yum.repos.d/jajauma-packages-server.repo
 install -m644 %{SOURCE4} %{buildroot}/etc/yum.repos.d/jajauma-packages-development.repo
 install -m644 %{SOURCE5} %{buildroot}/etc/yum.repos.d/jajauma-packages-neovim.repo
+install -m644 %{SOURCE6} %{buildroot}/etc/yum.repos.d/jajauma-packages-doublecmd.repo
 
 
 %files everything
@@ -85,6 +93,10 @@ install -m644 %{SOURCE5} %{buildroot}/etc/yum.repos.d/jajauma-packages-neovim.re
 %files neovim
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-neovim.repo
+
+%files doublecmd
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-doublecmd.repo
 
 
 %changelog
