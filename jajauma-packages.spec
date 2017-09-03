@@ -12,6 +12,7 @@ Source3:        jajauma-packages-server.repo
 Source4:        jajauma-packages-development.repo
 Source5:        jajauma-packages-neovim.repo
 Source6:        jajauma-packages-doublecmd.repo
+Source7:        jajauma-packages-ffmpeg.repo
 
 BuildArch:      noarch
 
@@ -55,6 +56,12 @@ Summary:        JajaumaPackages Yum Configuration (Double Commander)
 %description    doublecmd
 %{summary}.
 
+%package        ffmpeg
+Summary:        JajaumaPackages Yum Configuration (FFmpeg)
+
+%description    ffmpeg
+%{summary}.
+
 %prep
 
 
@@ -72,6 +79,7 @@ install -m644 %{SOURCE3} %{buildroot}/etc/yum.repos.d/jajauma-packages-server.re
 install -m644 %{SOURCE4} %{buildroot}/etc/yum.repos.d/jajauma-packages-development.repo
 install -m644 %{SOURCE5} %{buildroot}/etc/yum.repos.d/jajauma-packages-neovim.repo
 install -m644 %{SOURCE6} %{buildroot}/etc/yum.repos.d/jajauma-packages-doublecmd.repo
+install -m644 %{SOURCE7} %{buildroot}/etc/yum.repos.d/jajauma-packages-ffmpeg.repo
 
 
 %files everything
@@ -97,6 +105,10 @@ install -m644 %{SOURCE6} %{buildroot}/etc/yum.repos.d/jajauma-packages-doublecmd
 %files doublecmd
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-doublecmd.repo
+
+%files ffmpeg
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-ffmpeg.repo
 
 
 %changelog
