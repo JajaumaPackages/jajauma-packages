@@ -13,6 +13,7 @@ Source4:        jajauma-packages-development.repo
 Source5:        jajauma-packages-neovim.repo
 Source6:        jajauma-packages-doublecmd.repo
 Source7:        jajauma-packages-ffmpeg.repo
+Source8:        jajauma-packages-kernel.repo
 
 BuildArch:      noarch
 
@@ -22,44 +23,42 @@ BuildArch:      noarch
 
 %package        everything
 Summary:        JajaumaPackages Yum Configuration (Everything)
-
 %description    everything
 %{summary}.
 
 %package        wine
 Summary:        JajaumaPackages Yum Configuration (Wine)
-
 %description    wine
 %{summary}.
 
 %package        server
 Summary:        JajaumaPackages Yum Configuration (Server)
-
 %description    server
 %{summary}.
 
 %package        development
 Summary:        JajaumaPackages Yum Configuration (Development)
-
 %description    development
 %{summary}.
 
 %package        neovim
 Summary:        JajaumaPackages Yum Configuration (Neovim)
-
 %description    neovim
 %{summary}.
 
 %package        doublecmd
 Summary:        JajaumaPackages Yum Configuration (Double Commander)
-
 %description    doublecmd
 %{summary}.
 
 %package        ffmpeg
 Summary:        JajaumaPackages Yum Configuration (FFmpeg)
-
 %description    ffmpeg
+%{summary}.
+
+%package        kernel
+Summary:        JajaumaPackages Yum Configuration (Linux Kernel)
+%description    kernel
 %{summary}.
 
 %prep
@@ -80,6 +79,7 @@ install -m644 %{SOURCE4} %{buildroot}/etc/yum.repos.d/jajauma-packages-developme
 install -m644 %{SOURCE5} %{buildroot}/etc/yum.repos.d/jajauma-packages-neovim.repo
 install -m644 %{SOURCE6} %{buildroot}/etc/yum.repos.d/jajauma-packages-doublecmd.repo
 install -m644 %{SOURCE7} %{buildroot}/etc/yum.repos.d/jajauma-packages-ffmpeg.repo
+install -m644 %{SOURCE8} %{buildroot}/etc/yum.repos.d/jajauma-packages-kernel.repo
 
 
 %files everything
@@ -109,6 +109,10 @@ install -m644 %{SOURCE7} %{buildroot}/etc/yum.repos.d/jajauma-packages-ffmpeg.re
 %files ffmpeg
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-ffmpeg.repo
+
+%files kernel
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-kernel.repo
 
 
 %changelog

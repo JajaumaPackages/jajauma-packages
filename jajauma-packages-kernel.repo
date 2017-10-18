@@ -1,0 +1,6 @@
+[jajauma-packages-kernel]
+name=Jajauma's Packages - Linux Kernel
+baseurl=http://packages.jajauma.exnet.su/yum/kernel-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
