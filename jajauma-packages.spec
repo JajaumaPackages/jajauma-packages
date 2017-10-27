@@ -14,6 +14,8 @@ Source5:        jajauma-packages-neovim.repo
 Source6:        jajauma-packages-doublecmd.repo
 Source7:        jajauma-packages-ffmpeg.repo
 Source8:        jajauma-packages-kernel.repo
+Source9:        jajauma-packages-scientific.repo
+Source10:       jajauma-packages-misc.repo
 
 BuildArch:      noarch
 
@@ -61,6 +63,16 @@ Summary:        JajaumaPackages Yum Configuration (Linux Kernel)
 %description    kernel
 %{summary}.
 
+%package        scientific
+Summary:        JajaumaPackages Yum Configuration (Scientific)
+%description    scientific
+%{summary}.
+
+%package        misc
+Summary:        JajaumaPackages Yum Configuration (Miscellaneous)
+%description    misc
+%{summary}.
+
 %prep
 
 
@@ -80,6 +92,8 @@ install -m644 %{SOURCE5} %{buildroot}/etc/yum.repos.d/jajauma-packages-neovim.re
 install -m644 %{SOURCE6} %{buildroot}/etc/yum.repos.d/jajauma-packages-doublecmd.repo
 install -m644 %{SOURCE7} %{buildroot}/etc/yum.repos.d/jajauma-packages-ffmpeg.repo
 install -m644 %{SOURCE8} %{buildroot}/etc/yum.repos.d/jajauma-packages-kernel.repo
+install -m644 %{SOURCE9} %{buildroot}/etc/yum.repos.d/jajauma-packages-scientific.repo
+install -m644 %{SOURCE10} %{buildroot}/etc/yum.repos.d/jajauma-packages-misc.repo
 
 
 %files everything
@@ -113,6 +127,14 @@ install -m644 %{SOURCE8} %{buildroot}/etc/yum.repos.d/jajauma-packages-kernel.re
 %files kernel
 /etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
 %config /etc/yum.repos.d/jajauma-packages-kernel.repo
+
+%files scientific
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-scientific.repo
+
+%files misc
+/etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+%config /etc/yum.repos.d/jajauma-packages-misc.repo
 
 
 %changelog

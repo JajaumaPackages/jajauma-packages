@@ -1,0 +1,6 @@
+[jajauma-packages-scientific]
+name=Jajauma's Packages - Scientific
+baseurl=http://packages.jajauma.exnet.su/yum/scientific-el$releasever/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-JajaumaPackages
+enabled=1
+gpgcheck=1
